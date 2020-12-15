@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> 
+        |Template 1|
+        </title>
+        <link href="css/anythingslider.css" rel="stylesheet">
+        <link href="css/theme-metallic.css" rel="stylesheet">
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="slider.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Goldman:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+    </script>
+    <script src="js/jquery.anythingslider.min.js"></script>
+            <script type="text/javascript">
+            $(document).ready(function(){
+                $("nav").accessibleDropDown();
+                $('#slider3').anythingSlider({
+                theme   :'metallic',
+                expand  :false,
+                resizeContents :true,
+                aspectRatio :true,
+                showMultiple    :1,
+                changeBy    :1,
+                startPanel  :1,
+                autoPlay    :true
+            })
+            .find('.panel')
+            .find('div[class*=caption]').css(
+            {
+                position: 'absolute'
+            })
+            .end()
+            .hover(function() {
+                showCaptions( $(this));
+            },
+            function() {
+                hideCaptions( $(this));
+            }); //end slider
+            showCaptions = function(el) {
+                var $this = el;
+                if ($this.find('.caption-bottom').length) {
+                    $this.find('.caption-bottom')
+                    .show()
+                    .animate({ bottom: 0, opacity: 1}, 400);
+                }
+            };
+            hideCaptions = function(el) {
+                var $this = el;
+                if ($this.find('.caption-bottom').length) {
+                    $this.find('.caption-bottom')
+                    .stop()
+                    .animate({ bottom: -50, opacity: 0}, 350, function() {
+                        $this.find('.caption-bottom').hide();
+                    });
+                }
+            };
+            hideCaptions( $('#slider3 .panel'));
+            });// end ready
+            $.fn.accessibleDropDown = function() {
+                var el = $(this);
+                $("a", el).focus(function(){
+                    $(this).parents("li").addClass("hover");
+                }).blur(function(){
+                    $(this).parents("li").removeClass("hover");
+                });
+            }
+    </script>
+    <style>
+        nav ul li a:hover,
+        nav ul li a:focus,
+        nav ul li a:active,
+        nav ul li.hover a {
+            background-color: #e1e2dd;
+            transition: background-color 1s ease-out; /*<-- this line will produce a transition */
+            color: #3F4044;
+        }
+    </style>
+
+    </head>
+    <body>
+    <div id="wrapper">
+            <header>
+            <h1>Home</h1>
+                <nav>
+                    <ul>
+                        <li><a href="slider.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="blog.html">Blog</a>
+                            <ul>
+                                <li><a href="xbox.html">Xbox</a></li>
+                                <li><a href="#">Xbox 360</a></li>
+                                <li><a href="#">Xbox One</a></li>
+                                <li><a href="#">Xbox Series</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="discord.html">Discord</a>
+                            <ul>
+                                <li><a href="#">item 1</a></li>
+                                <li><a href="#">item 2</a></li>
+                                <li><a href="#">item 3</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <aside>
+               <p>The side content</p>
+                    <p>The sidebar content</p>
+                    <p>The sidebar content</p>
+                    <p>The sidebar content</p>
+                    <p>The sidebar content</p>
+                    <p>The sidebar content</p>
+                    <p>The sidebar content</p>
+            </aside>
+            <section>
+                    <article>
+                        <ul id="slider3">
+                            <li>
+                                <div class="caption-top">
+                                    The most powerful and smallest xbox ever made.
+                                </div>
+                                <a href="descPage1.html">
+                                    <img src="images/xbox_series.jpg" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="descPage2.html">
+                                    <img src="images/xbox_one_og.jpg" alt="">
+                                </a>
+                                <div class="caption-right">
+                                    Thousands of 4k HDR games on Xbox One
+                                </div>
+                            </li>
+                            <li>
+                                <a href="descPage3.html">
+                                    <img src="images/xbox_360.jpg" alt="">
+                                </a>
+                                <div class="caption-bottom">
+                                    Take a 360 view at Xbox 360
+                                </div>
+                            </li>
+                            <li>
+                                <a href="descPage4.html">
+                                    <img src="images/xbox_og.jpg" alt="">
+                                </a>
+                                <div class="caption-left">
+                                   The orignal Xbox: Where it all began
+                                </div>
+                            </li>
+                            </ul> 
+                    </article>
+
+                    <h2 class="spec"></h2>
+                    <article class="cols">
+                        <h2 class="cols-span">Nihil Molestiae Consequatur</h2>
+                        <p class="lead cols-span">
+                            "On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish."
+                        </p>
+                    </article>
+            </section>
+            
+            <footer>
+            <p>Copyright 2020 All rights Reserved</p>
+            </footer>
+    </div>
+    </body>
+</html>
