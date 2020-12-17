@@ -1,0 +1,323 @@
+body, p, header, aside, section, article, h1, h2, h3, nav, div, footer {
+    padding:0;
+    margin:0;
+}
+
+body {
+    background-color: #252122;
+    font-family: 'Anton', sans-serif;
+    font-family: 'Goldman', cursive;
+}
+
+#wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: white;
+    background-image: url(images/xbox_background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+p {
+    margin-bottom: 1.2em;
+    font: 'Goldman';
+    
+}
+
+header {
+    text-align: center;
+    background-color: #01D00C;
+    height:200px;
+    font: 'Anton';
+    background: #01D00C url('images/gamepass.jpg') center no-repeat;
+    background-size: 300px;
+    height: 200px;
+}
+
+header h1 {
+    color: #252122;
+    font-weight: 900;
+    font-size: 2.5em;
+    margin: 0 0 1em 0;
+    font: 'Anton';
+    margin: 0 auto 1em auto;
+    max-width: 40%;
+    border-radius: 1em;
+    
+}
+
+aside {
+    max-width: 200px;
+    float: left;
+    min-height: 600px;
+    color: #b49898;
+    background-color: #3F4044;
+}
+
+aside p {
+    padding: 0px 20px;
+}
+
+section {
+    padding: 10px;
+    float: left;
+    max-width: 80%;
+}
+
+article p {
+    padding-left: 1.5em;
+    color: darkgreen;
+    font-size: 1em;
+    font: 'Goldman';
+    background-color: rgba(211,211,211, .7);
+}
+
+footer {
+    clear: both;
+    background-color: #50A794;
+    text-align: center;
+    font-size: 85%;
+    min-height: 100px;
+}
+
+footer p {
+    padding-top: 3%;
+}
+
+nav ul {
+    margin: 0;
+    list-style: none;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 0.35em;
+    position: relative;
+    float: left;
+}
+
+
+nav ul li ul {
+    display: none;
+}
+
+nav ul li a {
+    font-size: 110%;
+    display: block;
+    border-radius: 5px;
+    color: #e1e2dd;
+    text-decoration: none;
+    padding: 0.6em 1.2em 0.6em 1.2em;
+    background-color: #3F4044;
+    margin-left: -1px;
+    white-space: nowrap;
+    outline: 0;
+}
+
+nav ul li a:hover,
+nav ul li a:focus,
+nav ul li a:active {
+    background-color: #e1e2dd;
+    color: #3F4044;
+}
+
+nav li:hover ul,
+nav li.hover ul {
+    display: block;
+    position: absolute;
+    float: none;
+    z-index: 1000; /*add this fob sub-menu over slider */
+}
+
+nav ul li:hover ul a,
+nav ul li.hover ul a {
+    background-color: #3F4044;
+    color: #e1e2dd;
+    width: 130px;
+    border-radius:0;
+    text-align: left;
+    padding-left: 0.6em;
+}
+
+nav ul li:hover ul a:hover,
+nav ul li.hover ul a:hover,
+nav ul li.hover ul a:focus,
+nav ul li.hover ul a:active {
+    background-color: #e1e2dd;
+    color: #3F4044;
+}
+
+nav {
+    margin: 0 0 0 200px; /* matches the width of the left sidebar */
+    position: relative;
+    top: 34.5% /* sets the bottom of the anchor at the top of the section */
+}
+
+.coles {
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+    -webkit-column-gap: 10px;
+    -moz-column-gap: 10px;
+    column-gap: 10px;
+}
+
+.cols-span {
+    -webkit-column-span: all;
+    -moz-column-span: all;
+    column-span: all;
+    font-size: 1.2em;
+    margin-bottom: 0.2em;
+    line-height: 1.2em;
+    
+}
+
+.cols p {
+    margin-bottom: 1.1em;
+    text-align: justify;
+    
+}
+
+.lead {
+    background-color: rgba(211,211,211, .9);
+    font-size: 1em;
+    text-align: left;
+    font: "Goldman";
+}
+
+.cols {
+    /*-webkit-column-count: 3;
+    -moz-colomn-count: 3;
+         column-count: 3;
+    -webkit-column-gap: 10px;
+        -moz-column-gap: 10px;
+            column-gap: 10px; */
+    -webkit-column-width: 200px;
+    -moz-column-width: 200px;
+            column-width: 200px;
+}
+
+.rgt {
+    float: right;
+    max-width: 30%;
+}
+
+img {
+    padding: 0.3em;
+    border: 5px solid green;
+}
+
+.spec {
+    margin: -15px 0 10px 0;
+    border-bottom: 1px solid #483838;
+    line-height: 0;
+}
+
+.ads {
+    float: right;
+    text-align: center;
+    font-size: 90%;
+    color: #b49898;
+    background-color: #3F404;
+}
+
+.ads p {
+    padding-top: 0.3;
+}
+
+/* New Class */
+.smImg {
+    float: left;
+    max-width: 30%;
+    padding-right: 0.4;
+}
+
+/* new selector -this will allow the images to shrink as we lose display width. it will come in handy a bit later. */
+article img {
+    max-width: 100%;
+}
+
+/* New in version 1.7+ */ 
+#slider3 {
+    width:99%;
+    height: 400px;
+    list-style: none; 
+  } 
+  /* images with caption */ 
+  #slider3 img {
+    width: 100%;
+    height: 100%; 
+  } 
+  /* position the panels so the captions appear correctly */ 
+  #slider3 .panel {
+  position: relative; 
+  } 
+  /* captions */ 
+  #slider3 .caption-top, #slider3 .caption-right, #slider3 .caption-bottom, #slider3 .caption-left {
+    background:#000;
+    color: #fff;
+    padding: 10px;
+    margin: 0;
+    position: relative;
+    z-index: 10;
+    opacity: 0.8;
+    filter: alpha(opacity=80); 
+  } 
+  /* Top caption - padding is included in the width (480px here, 500px in the script), same for height */ 
+  #slider3 .caption-top {
+    left: 0;
+    top: 0;
+    width: 480px;
+    height: 30px; 
+  }
+  /* Right caption - padding is included in the width (130px here, 150px in the script), same for height */ 
+  #slider3 .caption-right {
+    right:0;
+    bottom:0;
+    width:130px;
+    height:180px; 
+  } 
+  /* Bottom caption - padding is included in the width (480px here, 500px in the script), same for height */ 
+  #slider3 .caption-bottom {
+    left:0;
+    bottom:0;
+    width:480px;
+    height:30px; 
+  } 
+  /* Left caption - padding is included in the width (130px here, 150px in the script), same for height */ 
+  #slider3 .caption-left {
+    left: 0;
+    bottom: 0;
+    width:130px;
+    height:180px; 
+  } 
+  /* Caption close button */ 
+  .caption-top .close, .caption-right .close, .caption-bottom .close, .caption-left .close {
+    font-size: 80%;
+    cursor: pointer; 
+    float: right;
+    display:inline-block; 
+  }
+
+  video {
+      float: left;
+      padding: 5px;
+      margin-top: 10px;
+  }
+
+  #dashboard {
+    width: 70px;
+    background-color: #01C603;
+    padding: 20px 20px 0 20px;
+    position: absolute;
+    left: -92px;
+    float: left;
+    clear: right;
+    z-index: 100;
+}
+
+#dashboard img {
+    margin-bottom: 20px;
+    border: 1px solid rgb(0,0,0);
+    opacity: 0.4; 
+}

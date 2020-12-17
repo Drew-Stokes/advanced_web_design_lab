@@ -4,15 +4,108 @@
         <title> 
         |Template 1|
         </title>
+        <link href="css/anythingslider.css" rel="stylesheet">
+        <link href="css/theme-metallic.css" rel="stylesheet">
         <meta charset="utf-8">
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="mediaMenu.css">
         <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Goldman:wght@400;700&display=swap" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
     </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+    <script src="js/jquery.anythingslider.min.js"></script>
             <script type="text/javascript">
             $(document).ready(function(){
                 $("nav").accessibleDropDown();
+                $('#slider3').anythingSlider({
+                theme   :'metallic',
+                expand  :false,
+                resizeContents :true,
+                aspectRatio :true,
+                showMultiple    :1,
+                changeBy    :1,
+                startPanel  :1,
+                autoPlay    :true
+            })
+            .find('.panel')
+            .find('div[class*=caption]').css(
+            {
+                position: 'absolute'
+            })
+            .end()
+            .hover(function() {
+                showCaptions( $(this));
+            },
+            function() {
+                hideCaptions( $(this));
+            }); //end slider
+            showCaptions = function(el) {
+                var $this = el;
+                if ($this.find('.caption-bottom').length) {
+                    $this.find('.caption-bottom')
+                    .show()
+                    .animate({ bottom: 0, opacity: 1}, 400);
+                }
+            };
+            hideCaptions = function(el) {
+                var $this = el;
+                if ($this.find('.caption-bottom').length) {
+                    $this.find('.caption-bottom')
+                    .stop()
+                    .animate({ bottom: -50, opacity: 0}, 350, function() {
+                        $this.find('.caption-bottom').hide();
+                    });
+                }
+            };
+            hideCaptions( $('#slider3 .panel'));
+            $('#dashboard').hover(
+                function() {
+                    $(this).stop().animate(
+                        {
+                            left: '0',
+                            backgroundColor: '#01C603'
+                        },
+                        500,
+                        'easeOutCubic'
+                    ); //end animate
+                    },
+                    function() {
+                        $(this).stop().animate(
+                            {
+                                left: '-92px',
+                                backgroundColor: '#e1e2dd'
+                            },
+                            1500,
+                            'easeOutBounce'
+                        );// end animate
+                    }
+    
+            ); // end hover
+            $('#dashboard img').hover(
+                function(){
+                    $(this).stop().animate(
+                        {opacity: 1.0}, 500
+                    );
+                },
+                function() {
+                    $(this).stop().animate(
+                        {opacity: 0.4}, 500
+                    );
+                });
+                $('nav ul li a').hover(
+                    function() {
+                        $(this).stop().animate( //
+                            {
+                                paddingRight: '2.5em'
+                            }, 1000 );
+                        },
+                        function(){
+                            $(this).stop().animate(
+                            {
+                                paddingright: '1.2em'
+                            }, 1000);
+                        
+                        });//end nav hover
             });// end ready
             $.fn.accessibleDropDown = function() {
                 var el = $(this);
@@ -62,6 +155,15 @@
                     </ul>
                 </nav>
             </header>
+            <div id="dashboard">
+                <a href="#"><img src="icons/fb.png" width="70" height="70" title="Follow on Facebook"></a>
+                <a href="#"><img src="icons/g+.png" width="70" height="70" title="Add to Circles on Google+"></a>
+                <a href="#"><img src="icons/ttr.png" width="70" height="70" title="Follow on Twitter"></a>
+                <a href="#"><img src="icons/ln.png" width="70" height="70" title="Add on LinkedIn"></a>
+                <a href="#"><img src="icons/ig.png" width="70" height="70" title="Follow on Instagram"></a>
+                <a href="#"><img src="icons/pnt.png" width="70" height="70" title="Follow on Pinterest"></a>
+                <a href="#"><img src="icons/yt.png" width="70" height="70" title="Subscribe to our YouTube Channel"></a>
+            </div>
             <aside>
                <p>The side content</p>
                     <p>The sidebar content</p>
@@ -73,10 +175,40 @@
             </aside>
             <section>
                     <article>
-                        <h2>Article One Heading</h2>
-                        <p>Article One content</p>
-                        <img src="images/andrew_xbox.jpg" alt="an image" class="rgt">
-                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. </p> <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?</p>
+                        <ul id="slider3">
+                            <li>
+                                <div class="caption-top">
+                                    The most powerful and smallest xbox ever made.
+                                </div>
+                                <a href="descPage1.html">
+                                    <img src="images/xbox_series.jpg" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="descPage2.html">
+                                    <img src="images/xbox_one_og.jpg" alt="">
+                                </a>
+                                <div class="caption-right">
+                                    Thousands of 4k HDR games on Xbox One
+                                </div>
+                            </li>
+                            <li>
+                                <a href="descPage3.html">
+                                    <img src="images/xbox_360.jpg" alt="">
+                                </a>
+                                <div class="caption-bottom">
+                                    Take a 360 view at Xbox 360
+                                </div>
+                            </li>
+                            <li>
+                                <a href="descPage4.html">
+                                    <img src="images/xbox_og.jpg" alt="">
+                                </a>
+                                <div class="caption-left">
+                                   The orignal Xbox: Where it all began
+                                </div>
+                            </li>
+                            </ul> 
                     </article>
 
                     <h2 class="spec"></h2>
@@ -87,15 +219,7 @@
                         </p>
                     </article>
             </section>
-            <aside class="ads">
-                <p>Adeverstisment can run the size out to the margin of the previous container element, no more!</p>
-                <p>Advertisement</p>
-                <p>Advertisement</p>
-                <p>Advertisement</p>
-                <p>Advertisement</p>
-                <p>Advertisement</p>
-
-            </aside>
+            
             <footer>
             <p>Copyright 2020 All rights Reserved</p>
             </footer>

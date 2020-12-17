@@ -13,6 +13,20 @@
             <script type="text/javascript">
             $(document).ready(function(){
                 $("nav").accessibleDropDown();
+                $('nav ul li a').hover(
+                    function() {
+                        $(this).stop().animate( //
+                            {
+                                paddingRight: '2.5em'
+                            }, 1000 );
+                        },
+                        function(){
+                            $(this).stop().animate(
+                            {
+                                paddingright: '1.2em'
+                            }, 1000);
+                        
+                        });//end nav hover
             });// end ready
             $.fn.accessibleDropDown = function() {
                 var el = $(this);
@@ -41,7 +55,7 @@
             <h1>Home</h1>
                 <nav>
                     <ul>
-                        <li><a href="slider.html">Home</a></li>
+                        <li><a href="home.html">Home</a></li>
                         <li><a href="about.html">About</a></li>
                         <li><a href="blog.html">Blog</a>
                             <ul>
